@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 87%;
+    max-width: 560px;
+    min-width: 320px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card {
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px;
+}
+
+/*Left Card*/
+
+.left {
+    border-radius: 10px 170px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    padding: 40px;
+}
+
+#logo {
+    max-width: 340px;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.icons {
+    display: flex;
+}
+
+.icons > * {
+    margin-right: 20px;
+}
+
+.crd {
+    position: relative;
+}
+
+.ic-crd {
+    z-index: 4;
+    background-color: hsl(229, 57%, 11%);
+    height: 60px;
+    width: 60px;
+    padding: 18px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.ic-crd:hover {
+    cursor: pointer;
+}
+
+.ic-lab {
+    z-index: 1;
+    position: absolute;
+    font-size: .55rem;
+    font-weight: 700;
+    overflow: hidden;
+    background-color: hsl(229, 57%, 11%);
+    color: white;
+    width: 100%;
+    top: 65%;
+    left: 0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0px;
+    transform: scaleX(0);
+    transition: padding .1s linear, top .1s linear, transform .1s linear;
+}
+
+.ic-lab.visible {
+    width: 100%;
+    padding: 5px;
+    top: 100%;
+    text-align: center;
+    transform: scaleX(1);
+    transition: padding .2s linear, top .2s linear, transform .2s linear;
+}
+
+/*Right Card*/
+
+.right {
+    position: relative;
+}
+
+.strg {
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.strg > p {
+    font-weight: 400;
+}
+
+.strg > p > span {
+    font-weight: 700;
+}
+
+.length-num {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.strg-bar {
+    margin: 25px 0px;
+}
+
+.bar-back {
+    height: 20px;
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 10px;
+    position: relative;
+}
+
+.bar-body {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    height: 12px;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    width: calc(80% - 10px);
+    top: 4px;
+    left: 5px;
+    border-radius: 10px;
+}
+
+.bar-body::after {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*Floating Box*/
+
+.much-left {
+    position: absolute;
+    top: 80%;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.amt-text {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: hsl(229, 7%, 55%);
+    font-weight: 700;
+}
+
+.amt {
+    font-size: 3rem;
+    color: hsl(229, 57%, 11%);
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1039px) {
+    body {
+        background-image: url(/images/bg-desktop.png);
+        background-color: hsl(229, 57%, 11%);
+        background-size: 100% 50%;
+        background-position: 100% 100%;
+    }
+
+    main {
+        flex-direction: row;
+        max-width: fit-content;
+    }
+
+    .card {
+        height: 220px;
+    }
+
+    .left {
+        margin-right: 20px;
+        width: 400px;
+    }
+
+    .right {
+        margin-top: 58px;
+        height: 160px;
+        width: 620px;
+        display: flex;
+        align-items: center;
+    }
+
+    .strg {
+        padding: 10px 40px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .strg-bar {
+        margin-bottom: 0px;
+    }
+
+    .much-left {
+        width: 32%;
+        height: 50%;
+        top: -40px;
+        right: 40px;
+        transform: translateX(0%);
+        border-radius: 10px 10px 0px 10px;
+    }
+
+    .much-left::after {
+        content: ' ';
+        position: absolute;
+        height: 0;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 0px solid transparent;
+        border-top: 30px solid white;
+        top: 100%;
+        right: 0;
+    }
+}
